@@ -1,0 +1,12 @@
+<tr>
+  <td class="label">{{shopping_item.item_name}}</td>
+  <td class="label">{{shopping_item.order_time.strftime("%m/%d/%Y")}}</td>
+  <td class="label">{{shopping_item.price_usd}}</td>
+  <td class="label">{{shopping_item.item_quantity if shopping_item.item_quantity}}</td>
+  <td class="label">{{"Yes" if shopping_item.shipped else "No"}}</td>
+  <td class="label">{{shopping_item.forex if shopping_item.forex}}</td>
+  <td class="label">{{shopping_item.price_rmb if shopping_item.price_rmb}}</td>
+  <td class="label">{{shopping_item.selling_price if shopping_item.selling_price}}</td>
+  <td class="label">{{shopping_item.link if shopping_item.link}}</td>
+  <td class="label">{{shopping_item.mark if shopping_item.mark}}</td>
+</tr>

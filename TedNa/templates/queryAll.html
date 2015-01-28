@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table border="1" width="100%" id="items">
+    {{ rp.render_table_header() | safe}}
+    {% for s in shopping_items %}
+      {{ s.render_item() | safe }}
+    {% endfor %}
+  </table>
+{% endblock %}
+

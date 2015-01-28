@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if not shopping_item %}
+  <h2>Update Item</h2>
+   
+  <form method="post">
+    <table style="width:100%" >
+      <tr>
+	<td class="label">Order Date (mm/dd/yyyy)</td>
+	<td> <input type="item_text" name="order_time" value="{{order_time}}"> </td>
+	<td class="error">{{error_order_time}}</td>	    
+      </tr>
+      <tr>
+	<td class="label">Item Name</td>
+	<td> <input type="item_text" name="item_name" value="{{item_name}}"> </td>
+	<td class="error">{{error_item_name}}</tr>
+      </tr>
+      <tr>
+	<td class="label">Item Quantity(Optional)</td>
+	<td> <input type="item_text" name="item_quantity" value="{{item_quantity}}"> </td>
+	<td class="error">{{error_item_quantity}}</tr>
+      </tr>
+      <tr>
+	<td class="label">Price in USD</td>
+	<td> <input type="item_text" name="price_usd" value="{{price_usd}}"> </td>
+	<td class="error">{{error_price_usd}}</tr>
+      </tr>
+      <!--<tr>-->
+	<!--<td class="label">Price in RMB(Optional)</td>-->
+	<!--<td> <input type="item_text" name="price_rmb" value="{{price_rmb}}"> </td>-->
+	<!--<td class="error">{{error_price_rmb}}</tr>-->
+      <!--</tr>-->
+      <!--<tr>-->
+	<!--<td class="label">Forex(Optional)</td>-->
+	<!--<td> <input type="item_text" name="forex" value="{{forex}}"> </td>-->
+	<!--<td class="error">{{error_forex}}</tr>-->
+      <!--</tr>-->
+      <tr>
+	<td class="label">Shipped?</td>
+	<td>
+	  <select name="shipped">
+	    <option value="No">No</option>
+	    <option value="Yes">Yes</option>
+	  </select>	
+	</td>
+	<td class="error">{{error_shipped}}</tr>
+      </tr>
+      <tr>
+	<td class="label">Link(Optional)</td>
+	<td> <input type="item_text" name="link" value="{{link}}"> </td>
+	<td class="error">{{error_link}}</tr>
+      </tr>
+      <tr>
+	<td><div class="label">Mark(Optional)</div></td>
+	<td> <textarea  id="record" name="mark" value="{{mark}}"></textarea></td>
+	<td class="error">{{error_mark}}</tr>
+      </tr>
+      <tr>
+	<td class="label">Selling Price(rmb, Optional)</td>
+	<td> <input type="item_text" name="selling_price" value="{{selling_price}}"> </td>
+	<td class="error">{{error_selling_price}}</tr>
+      </tr>
+    </table>
+    <input type="submit" value="submit">
+    {% else %}
+      {{ shopping_item.render_after_update() | safe}}	
+    {% endif %}
+
+{% endblock %}
